@@ -230,6 +230,11 @@ strong { color: var(--navy); font-weight: 600; }
   object-fit: cover; opacity: 0; transition: opacity .35s ease;
 }
 
+/* a slot that cycles through several photos: only the shown one is visible,
+   and the longer transition makes the change a crossfade rather than a cut */
+.ph--fade > img { transition: opacity 1.4s ease; }
+.ph--fade > img.is-shown { opacity: 1; }
+
 /* --------------------------------------------------------- hero */
 .hero { position: relative; background: var(--navy-900); overflow: hidden; }
 .hero-slide {
@@ -383,7 +388,9 @@ strong { color: var(--navy); font-weight: 600; }
 /* --------------------------------------------------------- sustainability */
 .sustain { background: var(--mist); }
 .sustain-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(30px, 5vw, 60px); align-items: center; }
-.sustain .ph { height: clamp(260px, 30vw, 380px); }
+/* keyed off the grid, not the section: the About page reuses this layout
+   without the .sustain background, and the slot collapsed to zero height */
+.sustain-grid .ph { height: clamp(260px, 30vw, 380px); }
 
 /* --------------------------------------------------------- CTA + form */
 .cta {

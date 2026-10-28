@@ -91,6 +91,33 @@
     start();
   })();
 
+  /* ---------------------------------------------------------- crossfading photo slots
+     Any .ph--fade slot cycles through its images. An image whose file is
+     missing removes itself (see the onerror in the markup), so the list is
+     re-read on every tick and a slot left with one photo simply holds it. */
+  Array.prototype.forEach.call(document.querySelectorAll(".ph--fade"), function (slot) {
+    var index = 0;
+
+    function live() { return slot.querySelectorAll("img[data-fade]"); }
+
+    function show(n) {
+      var imgs = live();
+      if (!imgs.length) return;
+      index = (n + imgs.length) % imgs.length;
+      Array.prototype.forEach.call(imgs, function (img, i) {
+        img.classList.toggle("is-shown", i === index);
+      });
+    }
+
+    show(0);
+    if (reduceMotion || live().length < 2) return;
+
+    window.setInterval(function () {
+      if (document.hidden) return;
+      if (live().length > 1) show(index + 1);
+    }, 5500);
+  });
+
   /* ---------------------------------------------------------- enquiry form
      Static hosting has no server to post to, so the form composes a
      pre-filled email in the visitor's own mail client. Swap this handler for a

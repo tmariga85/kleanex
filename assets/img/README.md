@@ -12,6 +12,7 @@ shows a broken image.
 | `hero-2.jpg` | Home hero, slide 2 — blueberries, orchard and sunrise | 1672 × 615 |
 | `hero-3.jpg` | Home hero, slide 3 — mixed fruit over the valley | 828 × 282 |
 | `hero-4.jpg` | Home hero, slide 4 — litchis | 654 × 726 |
+| `sustainability-1.jpg` & `sustainability-2.jpg` | Sustainability section — crossfades between the orchard and the solar-powered pack house | 962 × 799 each |
 | `export.jpg` | Export Capabilities band — pallets loading onto a freighter at dawn | 1500 × 621 |
 | `quality.jpg` | Quality section — grading blueberries in the pack house | 408 × 288 |
 | `blueberries.jpg` | Product card + About page | 652 × 726 |
@@ -21,14 +22,6 @@ shows a broken image.
 | `passion-fruit.jpg` | Product card + About page | 407 × 210 |
 | `kiwis.jpg` | Product card + About page | 408 × 210 |
 
-## Still needed
-
-| Filename | Where it appears | Suggested size |
-| --- | --- | --- |
-| `sustainability.jpg` | Sustainability section — orchard, leaves, water | 1200 × 900 |
-
-That one slot still shows the illustrated fallback. Drop a JPG in with that name and it
-appears on the next push.
 
 ## Notes
 
