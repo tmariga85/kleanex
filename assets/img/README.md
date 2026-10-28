@@ -8,7 +8,7 @@ shows a broken image.
 
 | Filename | Where it appears | Size |
 | --- | --- | --- |
-| `hero-1.jpg` | Home hero, slide 1 — all six lines, water splash over the valley | 1949 × 807 |
+| `hero-1.jpg` | Home hero, slide 1 — the main lines together, water splash over the valley | 1949 × 807 |
 | `hero-2.jpg` | Home hero, slide 2 — blueberries, orchard and sunrise | 1672 × 615 |
 | `hero-3.jpg` | Home hero, slide 3 — mixed fruit over the valley | 828 × 282 |
 | `hero-4.jpg` | Home hero, slide 4 — litchis | 654 × 726 |
