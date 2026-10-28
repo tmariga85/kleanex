@@ -572,12 +572,34 @@ table.season tbody th {
   text-align: left; font-weight: 600; color: var(--navy); white-space: nowrap;
   position: sticky; left: 0; background: #fff;
 }
-table.season td span { display: block; height: 10px; border-radius: 999px; background: var(--line-soft); }
-table.season td.on span { background: var(--lime); }
-table.season td.peak span { background: var(--green); }
 table.season tbody tr:last-child th, table.season tbody tr:last-child td { border-bottom: 0; }
+
+/* each month shows the fruit itself, sized by how much is running:
+   big at peak, small when available, nothing at all out of season */
+table.season tbody th .srow { display: inline-flex; align-items: center; gap: 9px; }
+table.season tbody th .srow svg { width: 22px; height: 22px; flex: none; }
+
+table.season td { padding: 6px 4px; }
+.sf { display: flex; align-items: center; justify-content: center; width: 100%; height: 38px; }
+.sf svg {
+  width: 30px; height: 30px; opacity: 0; transform: scale(0); transform-origin: center;
+  transition: transform .28s cubic-bezier(.2, .8, .3, 1.25), opacity .28s ease;
+}
+table.season td.on .sf svg { opacity: .9; transform: scale(.52); }
+table.season td.peak .sf svg { opacity: 1; transform: scale(.88); }
+
+/* hovering a month with production brings that fruit forward */
+table.season td.on, table.season td.peak { cursor: pointer; }
+table.season td.on:hover, table.season td.peak:hover { background: var(--green-050); }
+table.season td.on:hover .sf svg, table.season td.peak:hover .sf svg { opacity: 1; transform: scale(1.3); }
+table.season tbody tr:hover td.on .sf svg { transform: scale(.62); }
+table.season tbody tr:hover td.peak .sf svg { transform: scale(1); }
+table.season tbody tr:hover td.on:hover .sf svg,
+table.season tbody tr:hover td.peak:hover .sf svg { transform: scale(1.3); }
+
 .legend { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 16px; font-size: .83rem; color: var(--slate-light); }
 .legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend svg { flex: none; }
 .legend i { width: 24px; height: 9px; border-radius: 999px; display: inline-block; }
 
 /* contact page */
