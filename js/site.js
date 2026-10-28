@@ -100,7 +100,7 @@
   if (!form) return;
 
   var status = document.getElementById("form-status");
-  var MAILBOX = "info@kleanex.co.za";
+  var MAILBOX = "tawanda@kleanex.co.za";
 
   function value(id) {
     var el = document.getElementById(id);

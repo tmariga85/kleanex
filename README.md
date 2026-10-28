@@ -1,6 +1,6 @@
 # Kleanex — Fresh Produce. Global Reach.
 
-Static three-page marketing site for **Kleanex (Pty) Ltd t/a Procitru**, an exporter of fresh
+Static three-page marketing site for **Kleanex (Pty) Ltd**, an exporter of fresh
 produce from Zimbabwe and South Africa (blueberries, strawberries, litchis, kiwis, passion
 fruit, avocados).
 
@@ -25,16 +25,23 @@ assets/img/         photography (see assets/img/README.md)
 robots.txt, sitemap.xml, .nojekyll
 ```
 
-Brand: Poppins for headings (two-tone — dark navy line, green line), Inter for body, the
-graduated dot-ring logo mark, vivid green `#22a94a` with navy `#0f2b40`. The logo, decorative
-bubbles, fruit illustrations and all UI icons are inline SVG — no image files required.
+Brand: Poppins for headings (two-tone — dark navy line, green line), Inter for body, vivid
+green `#22a94a` with navy `#0f2b40`. The Kleanex dot-ring mark is the real logo traced into
+36 SVG circles (`<symbol id="logo-mark">`, inline in each page and in `assets/favicon.svg`),
+so it stays sharp at any size and sits on the dark footer with no white box behind it. The
+decorative bubbles, fruit illustrations and all UI icons are inline SVG too.
+
+**Freight:** the site offers air freight only. There is no mention of sea freight or reefer
+containers anywhere, and the Incoterms in the contact form are the air-appropriate ones
+(EXW, FCA, CPT, CIP, DAP, DDP) rather than the sea-only FOB/CIF/CFR.
 
 ## Photography
 
-The design is built for photographs. Drop JPGs into `assets/img/` using the filenames listed
-in [assets/img/README.md](assets/img/README.md) and they appear automatically — each photo
-slot falls back to a green gradient panel with a fruit illustration until the file exists, so
-a missing image never shows a broken icon.
+Photos live in `assets/img/` and are picked up by filename — see
+[assets/img/README.md](assets/img/README.md) for what is in place and what is still missing.
+Nine slots are filled from the supplied brand photography; `litchis.jpg`, `avocados.jpg` and
+`sustainability.jpg` are still outstanding and show an illustrated fallback panel until they
+are added. A slot with no file never shows a broken image.
 
 ## Local preview
 
@@ -94,8 +101,10 @@ stops resolving and the site and the Google Workspace mail both go down with it.
 
 ## Content to confirm
 
-- **`info@kleanex.co.za`** is used throughout (footer, forms, schema, `js/site.js`). Mail runs
-  on Google Workspace, so this address needs to exist there — or swap it for a working one.
+- Company details on the site: Kleanex (Pty) Ltd, Reg. No. 2023/618866/07, 27A 1st Street,
+  Abbotsford, Johannesburg 2192, Gauteng, South Africa. Contact is
+  **`tawanda@kleanex.co.za`** and +27 83 727 3242, used throughout (footer, forms, schema,
+  `js/site.js`). Mail runs on Google Workspace.
 - Season windows are indicative for Southern African production; check each year's harvest
   before buyers plan against them.
 - Varieties and pack formats per line are standard offerings — adjust in `about.html` if the

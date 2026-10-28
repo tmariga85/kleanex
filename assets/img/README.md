@@ -1,29 +1,40 @@
 # Photography
 
-Drop JPGs in this folder using exactly these filenames and the site picks them up —
-no code change needed. Until a file exists, the page shows a green gradient panel with a
-fruit illustration instead, so nothing ever looks broken.
+Files here are picked up automatically by filename — no code change needed. A slot with no
+file falls back to a green gradient panel with a fruit illustration, so a missing photo never
+shows a broken image.
+
+## In place
+
+| Filename | Where it appears | Size |
+| --- | --- | --- |
+| `hero-1.jpg` | Home hero, slide 1 — branded blueberry crate in the field | 1672 × 941 |
+| `hero-2.jpg` | Home hero, slide 2 — mixed fruit crate | 828 × 414 |
+| `hero-3.jpg` | Home hero, slide 3 — packing branded cartons | 408 × 288 |
+| `export.jpg` | Export Capabilities band — branded pallets loading onto freighter | 827 × 414 |
+| `quality.jpg` | Quality section — grading blueberries in the pack house | 408 × 288 |
+| `blueberries.jpg` | Product card + About page | 409 × 210 |
+| `strawberries.jpg` | Product card + About page | 408 × 210 |
+| `passion-fruit.jpg` | Product card + About page | 407 × 210 |
+| `kiwis.jpg` | Product card + About page | 408 × 210 |
+
+## Still needed
 
 | Filename | Where it appears | Suggested size |
 | --- | --- | --- |
-| `hero-1.jpg` | Home hero, slide 1 ("Fresh Produce. Global Reach.") | 2000 × 1100, landscape |
-| `hero-2.jpg` | Home hero, slide 2 ("Six Produce Lines. One Partner.") | 2000 × 1100, landscape |
-| `hero-3.jpg` | Home hero, slide 3 ("From Orchard to Arrival.") | 2000 × 1100, landscape |
-| `blueberries.jpg` | Product card + About page | 900 × 700 |
-| `strawberries.jpg` | Product card + About page | 900 × 700 |
 | `litchis.jpg` | Product card + About page | 900 × 700 |
-| `kiwis.jpg` | Product card + About page | 900 × 700 |
-| `passion-fruit.jpg` | Product card + About page | 900 × 700 |
 | `avocados.jpg` | Product card + About page | 900 × 700 |
-| `export.jpg` | Export Capabilities band (pallets, reefer, aircraft) | 1400 × 1000 |
-| `quality.jpg` | Quality section (grading / packing line) | 1200 × 1100 |
-| `sustainability.jpg` | Sustainability section (orchard, leaves) | 1200 × 900 |
+| `sustainability.jpg` | Sustainability section — orchard, leaves, water | 1200 × 900 |
 
-Notes:
+Those three slots currently show the illustrated fallback. Drop a JPG in with the matching
+name and it appears on the next push.
 
-- The hero images sit under a dark gradient, so pick shots with detail on the right-hand
-  side — the headline sits over the left.
-- Keep each file under ~400 KB. Export at quality 70–80; these are decorative, not print.
-- Own photographs of your actual fruit, pack house and pallets will always beat stock.
-  Branded cartons and pallets in `export.jpg` are worth the effort — buyers look for them.
-- If you use stock images, check the licence allows commercial use.
+## Notes
+
+- The photos above were cut from the supplied brand collage, so the product close-ups are
+  only ~410 px wide. They are sharp on an ordinary screen but slightly soft on a high-DPI
+  phone or laptop. Higher-resolution originals (900 px wide or more) would be worth swapping
+  in if you have them.
+- Hero images sit under a dark gradient that is heaviest on the left, where the headline
+  sits — pick shots with the subject on the right.
+- Keep each file under ~400 KB; export at quality 70–80.
