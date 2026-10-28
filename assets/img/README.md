@@ -8,12 +8,14 @@ shows a broken image.
 
 | Filename | Where it appears | Size |
 | --- | --- | --- |
-| `hero-1.jpg` | Home hero, slide 1 — branded blueberry crate in the field | 1672 × 941 |
-| `hero-2.jpg` | Home hero, slide 2 — mixed fruit crate | 828 × 414 |
-| `hero-3.jpg` | Home hero, slide 3 — packing branded cartons | 408 × 288 |
-| `export.jpg` | Export Capabilities band — branded pallets loading onto freighter | 827 × 414 |
+| `hero-1.jpg` | Home hero, slide 1 — blueberries, orchard and sunrise | 1672 × 615 |
+| `hero-2.jpg` | Home hero, slide 2 — mixed fruit over the valley | 828 × 282 |
+| `hero-3.jpg` | Home hero, slide 3 — litchis | 654 × 726 |
+| `export.jpg` | Export Capabilities band — branded pallets loading onto a freighter | 827 × 414 |
 | `quality.jpg` | Quality section — grading blueberries in the pack house | 408 × 288 |
-| `blueberries.jpg` | Product card + About page | 409 × 210 |
+| `blueberries.jpg` | Product card + About page | 652 × 726 |
+| `litchis.jpg` | Product card + About page | 654 × 726 |
+| `avocados.jpg` | Product card + About page | 652 × 726 |
 | `strawberries.jpg` | Product card + About page | 408 × 210 |
 | `passion-fruit.jpg` | Product card + About page | 407 × 210 |
 | `kiwis.jpg` | Product card + About page | 408 × 210 |
@@ -22,19 +24,24 @@ shows a broken image.
 
 | Filename | Where it appears | Suggested size |
 | --- | --- | --- |
-| `litchis.jpg` | Product card + About page | 900 × 700 |
-| `avocados.jpg` | Product card + About page | 900 × 700 |
 | `sustainability.jpg` | Sustainability section — orchard, leaves, water | 1200 × 900 |
 
-Those three slots currently show the illustrated fallback. Drop a JPG in with the matching
-name and it appears on the next push.
+That one slot still shows the illustrated fallback. Drop a JPG in with that name and it
+appears on the next push.
 
 ## Notes
 
-- The photos above were cut from the supplied brand collage, so the product close-ups are
-  only ~410 px wide. They are sharp on an ordinary screen but slightly soft on a high-DPI
-  phone or laptop. Higher-resolution originals (900 px wide or more) would be worth swapping
-  in if you have them.
+- **Hero images must carry no Kleanex branding.** The crate shots used for slides 1 and 2 have
+  the logo rendered on the crate front, so both are cropped above the rail; slide 3 was
+  swapped to an unbranded litchi shot for the same reason. If you replace a hero image, check
+  it has no logo on it. Branding is deliberately kept on `export.jpg` (pallets) and
+  `quality.jpg` (apron), which are not in the banner.
 - Hero images sit under a dark gradient that is heaviest on the left, where the headline
   sits — pick shots with the subject on the right.
+- `strawberries.jpg`, `passion-fruit.jpg` and `kiwis.jpg` came out of the brand collage at
+  only ~410 px wide, so they are slightly soft on a high-DPI screen. The blueberry, litchi and
+  avocado cards are ~650 px and noticeably crisper — matching versions of the other three
+  would even them up.
+- `hero-3.jpg` is 654 px wide and gets scaled up across a full-width banner. A wide,
+  unbranded shot (1600 px or more) would be a straight upgrade for slide 3.
 - Keep each file under ~400 KB; export at quality 70–80.
