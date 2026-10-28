@@ -12,7 +12,7 @@ shows a broken image.
 | `hero-2.jpg` | Home hero, slide 2 — blueberries, orchard and sunrise | 1672 × 615 |
 | `hero-3.jpg` | Home hero, slide 3 — mixed fruit over the valley | 828 × 282 |
 | `hero-4.jpg` | Home hero, slide 4 — litchis | 654 × 726 |
-| `export.jpg` | Export Capabilities band — branded pallets loading onto a freighter | 827 × 414 |
+| `export.jpg` | Export Capabilities band — pallets loading onto a freighter at dawn | 1500 × 621 |
 | `quality.jpg` | Quality section — grading blueberries in the pack house | 408 × 288 |
 | `blueberries.jpg` | Product card + About page | 652 × 726 |
 | `litchis.jpg` | Product card + About page | 654 × 726 |
@@ -35,8 +35,11 @@ appears on the next push.
 - **Hero images must carry no Kleanex branding.** Slide 1 is clean as supplied. The crate
   shots on slides 2 and 3 have the logo rendered on the crate front, so both are cropped
   above the rail, and slide 4 was swapped to an unbranded litchi shot for the same reason.
-  If you replace a hero image, check it has no logo on it. Branding is deliberately kept on
-  `export.jpg` (pallets) and `quality.jpg` (apron), which are not in the banner.
+  If you replace a hero image, check it has no logo on it. `quality.jpg` is the only image
+  left carrying the rendered Kleanex branding (on the apron), and it is not in the banner.
+- The Export Capabilities slot is a tall box (around 557 × 440 on a desktop), so a wide photo
+  is centre-cropped to roughly its middle half. `export.jpg` is framed for that: the pallet
+  stack, the aircraft and the ground crew all sit in the centre of the shot.
 - Hero images sit under a dark gradient that is heaviest on the left, where the headline
   sits — pick shots with the subject on the right.
 - `strawberries.jpg`, `passion-fruit.jpg` and `kiwis.jpg` came out of the brand collage at
