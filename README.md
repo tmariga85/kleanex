@@ -39,7 +39,7 @@ containers anywhere, and the Incoterms in the contact form are the air-appropria
 
 Photos live in `assets/img/` and are picked up by filename — see
 [assets/img/README.md](assets/img/README.md) for what is in place and what is still missing.
-Eleven slots are filled from the supplied brand photography; only
+Twelve slots are filled from the supplied brand photography; only
 `sustainability.jpg` is still outstanding and shows an illustrated fallback panel until it
 is added. A slot with no file never shows a broken image. Hero images must carry no Kleanex
 branding — the crate shots are cropped above the rendered logo.
