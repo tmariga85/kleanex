@@ -1,7 +1,9 @@
-/* Kleanex — site behaviour: mobile nav, footer year, enquiry form.
+/* Kleanex — site behaviour: mobile nav, hero carousel, footer year, enquiry form.
    No dependencies, no build step. */
 (function () {
   "use strict";
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------------------------------------------------------- mobile nav */
   var toggle = document.querySelector(".nav-toggle");
@@ -14,7 +16,6 @@
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
 
-    /* close after following an in-page link */
     nav.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
         nav.classList.remove("open");
@@ -36,10 +37,64 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  /* ---------------------------------------------------------- hero carousel */
+  (function () {
+    var hero = document.getElementById("hero");
+    if (!hero) return;
+
+    var slides = hero.querySelectorAll("[data-slide]");
+    var copies = hero.querySelectorAll("[data-copy]");
+    var dots = hero.querySelectorAll("[data-hero-dot]");
+    var count = Math.max(slides.length, copies.length);
+    if (count < 2) return;
+
+    var index = 0;
+    var timer = null;
+    var INTERVAL = 7000;
+
+    function show(next) {
+      index = (next + count) % count;
+      for (var i = 0; i < count; i++) {
+        if (slides[i]) slides[i].classList.toggle("is-active", i === index);
+        if (copies[i]) copies[i].classList.toggle("is-active", i === index);
+        if (dots[i]) dots[i].setAttribute("aria-selected", i === index ? "true" : "false");
+      }
+    }
+
+    function start() {
+      if (reduceMotion || timer) return;
+      timer = window.setInterval(function () { show(index + 1); }, INTERVAL);
+    }
+    function stop() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+    function goTo(next) { stop(); show(next); start(); }
+
+    var prev = hero.querySelector("[data-hero-prev]");
+    var next = hero.querySelector("[data-hero-next]");
+    if (prev) prev.addEventListener("click", function () { goTo(index - 1); });
+    if (next) next.addEventListener("click", function () { goTo(index + 1); });
+
+    Array.prototype.forEach.call(dots, function (dot, i) {
+      dot.addEventListener("click", function () { goTo(i); });
+    });
+
+    hero.addEventListener("mouseenter", stop);
+    hero.addEventListener("mouseleave", start);
+    hero.addEventListener("focusin", stop);
+    hero.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { stop(); } else { start(); }
+    });
+
+    show(0);
+    start();
+  })();
+
   /* ---------------------------------------------------------- enquiry form
      Static hosting has no server to post to, so the form composes a
-     pre-filled email in the visitor's own mail client. Swap the handler for a
-     form service endpoint (Formspree, Netlify Forms, etc.) if you later want
+     pre-filled email in the visitor's own mail client. Swap this handler for a
+     form service endpoint (Formspree, Netlify Forms) if you later want
      submissions to arrive without the visitor's mail program. */
   var form = document.getElementById("enquiry-form");
   if (!form) return;
@@ -66,7 +121,7 @@
     var message = value("message");
 
     if (!name || !email || !message) {
-      say("Please add your name, email address and a short description of your enquiry.");
+      say("Please add your name, email address and a short message.");
       (document.getElementById(!name ? "name" : !email ? "email" : "message") || form).focus();
       return;
     }
@@ -79,7 +134,7 @@
     var produce = value("produce") || "Not specified";
     var subject = "Export enquiry: " + produce + " — " + (value("company") || name);
 
-    var body = [
+    var lines = [
       "EXPORT ENQUIRY (via kleanex.co.za)",
       "",
       "Name:            " + name,
@@ -87,20 +142,20 @@
       "Email:           " + email,
       "Phone/WhatsApp:  " + (value("phone") || "-"),
       "",
-      "Produce line:    " + produce,
-      "Destination:     " + (value("destination") || "-"),
+      "Product:         " + produce,
+      "Country/market:  " + (value("destination") || "-"),
       "Volume required: " + (value("volume") || "-"),
-      "Incoterms:       " + (value("incoterms") || "Not sure yet"),
+      "Incoterms:       " + (value("incoterms") || "-"),
       "",
-      "Enquiry:",
+      "Message:",
       message,
       ""
-    ].join("\n");
+    ];
 
     window.location.href =
       "mailto:" + MAILBOX +
       "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
+      "&body=" + encodeURIComponent(lines.join("\n"));
 
     say("Your email program should now open with this enquiry ready to send. If nothing happens, email " + MAILBOX + " directly.");
   });
