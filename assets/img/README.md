@@ -15,6 +15,7 @@ shows a broken image.
 | `sustainability-1.jpg` & `sustainability-2.jpg` | Sustainability section — crossfades between the orchard and the solar-powered pack house | 962 × 799 each |
 | `cta.jpg` | "Let's Work Together" band on every page — blueberries on navy, with the left side kept clear for the headline | 1800 × 602 |
 | `about-hero.jpg` | About page hero — fruit crates, pallets and a freighter at sunset; dark panel on the left for the heading | 1900 × 722 |
+| `contact-hero.jpg` | Contact page hero — desk, world map of contact routes and a container port at sunset | 1900 × 733 |
 | `band-world.jpg` | Export Capabilities band background — world map with routes over a sunset, under a green overlay | 1678 × 937 |
 | `export.jpg` | Export Capabilities band — pallets loading onto a freighter at dawn | 1500 × 621 |
 | `quality.jpg` | Quality section — QC inspector checking blueberries against the spec | 1400 × 933 |
@@ -45,3 +46,7 @@ shows a broken image.
 - `hero-4.jpg` is 654 px wide and gets scaled up across a full-width banner. A wide,
   unbranded shot (1600 px or more) would be a straight upgrade for slide 4.
 - Keep each file under ~400 KB; export at quality 70–80.
+- Page heroes are driven by a CSS variable: `.page-hero--photo` holds the overlay and sizing,
+  and `.page-hero--about` / `.page-hero--contact` each set `--hero-photo`. To change one
+  page's hero, swap that one file or point its class at a different image — nothing else
+  needs touching.
