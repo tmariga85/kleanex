@@ -14,6 +14,7 @@ shows a broken image.
 | `hero-4.jpg` | Home hero, slide 4 — litchis | 654 × 726 |
 | `sustainability-1.jpg` & `sustainability-2.jpg` | Sustainability section — crossfades between the orchard and the solar-powered pack house | 962 × 799 each |
 | `cta.jpg` | "Let's Work Together" band on every page — blueberries on navy, with the left side kept clear for the headline | 1800 × 602 |
+| `band-world.jpg` | Export Capabilities band background — world map with routes over a sunset, under a green overlay | 1678 × 937 |
 | `export.jpg` | Export Capabilities band — pallets loading onto a freighter at dawn | 1500 × 621 |
 | `quality.jpg` | Quality section — QC inspector checking blueberries against the spec | 1400 × 933 |
 | `blueberries.jpg` | Product card + About page | 652 × 726 |

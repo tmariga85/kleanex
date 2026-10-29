@@ -91,6 +91,60 @@
     start();
   })();
 
+  /* ---------------------------------------------------------- season calendar
+     Hovering a month swells that bar, lights up its row and its column, and
+     names what is running in the readout under the chart. */
+  (function () {
+    var table = document.querySelector("table.season");
+    if (!table) return;
+
+    var readout = document.querySelector("[data-season-readout]");
+    var hint = readout ? readout.innerHTML : "";
+    var headers = table.querySelectorAll("thead th");
+
+    function clear() {
+      Array.prototype.forEach.call(table.querySelectorAll(".col-active"), function (el) {
+        el.classList.remove("col-active");
+      });
+      Array.prototype.forEach.call(table.querySelectorAll(".row-active"), function (el) {
+        el.classList.remove("row-active");
+      });
+      Array.prototype.forEach.call(table.querySelectorAll(".is-hot"), function (el) {
+        el.classList.remove("is-hot");
+      });
+      if (readout) readout.innerHTML = hint;
+    }
+
+    function highlight(td) {
+      clear();
+      var col = td.cellIndex;
+      td.classList.add("is-hot");
+      if (td.parentNode) td.parentNode.classList.add("row-active");
+      if (headers[col]) headers[col].classList.add("col-active");
+      Array.prototype.forEach.call(table.querySelectorAll("tbody tr"), function (tr) {
+        if (tr.cells[col]) tr.cells[col].classList.add("col-active");
+      });
+
+      if (!readout) return;
+      var state = td.getAttribute("data-state") || "";
+      readout.innerHTML =
+        '<span><b>' + td.getAttribute("data-fruit") + '</b> &middot; ' +
+        td.getAttribute("data-month") + '</span>' +
+        '<span class="tag" data-state="' + state + '">' + state + "</span>";
+    }
+
+    table.addEventListener("mouseover", function (e) {
+      var td = e.target;
+      while (td && td !== table && td.tagName !== "TD") td = td.parentNode;
+      if (td && td.tagName === "TD" && td.hasAttribute("data-month")) highlight(td);
+    });
+
+    table.addEventListener("mouseleave", clear);
+
+    /* keyboard and touch: focusing a row label walks its whole season */
+    table.addEventListener("focusout", clear);
+  })();
+
   /* ---------------------------------------------------------- crossfading photo slots
      Any .ph--fade slot cycles through its images. An image whose file is
      missing removes itself (see the onerror in the markup), so the list is
