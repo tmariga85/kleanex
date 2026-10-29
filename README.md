@@ -119,3 +119,16 @@ Both forms compose a pre-filled email in the visitor's own mail client (`mailto:
 hosting has no server to receive a POST. To collect submissions without relying on the
 visitor's mail program, point the form at a form service (Formspree, Netlify Forms) and
 replace the submit handler in `js/site.js`.
+
+## Cache busting
+
+The stylesheet and script are linked with a `?v=` stamp, for example
+`css/styles.css?v=202610290253`. **Bump it on all three pages whenever `css/styles.css` or
+`js/site.js` changes.** GitHub Pages serves assets with `Cache-Control: max-age=600`, so
+without the stamp a visitor can briefly load new HTML against a cached old stylesheet — which
+is how the Contact page once rendered the About page's hero image.
+
+```bash
+V=$(date +%Y%m%d%H%M)
+sed -i "s|styles.css?v=[0-9]*|styles.css?v=$V|; s|site.js?v=[0-9]*|site.js?v=$V|" index.html about.html contact.html
+```
