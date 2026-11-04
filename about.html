@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=202610290253" />
+<link rel="stylesheet" href="css/styles.css?v=202611042049" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -116,6 +116,15 @@
       <ellipse cx="32" cy="32" rx="2" ry="2.8" />
     </g>
     <circle cx="24" cy="22" r="3.4" fill="#f6d98f" opacity=".5" />
+  </symbol>
+  <symbol id="f-pecan" viewBox="0 0 64 64">
+    <path d="M32 5c11 8 17 18.5 17 29.5C49 47.5 41 59 32 59S15 47.5 15 34.5C15 23.5 21 13 32 5z" fill="#a9733c" />
+    <path d="M32 5c11 8 17 18.5 17 29.5C49 47.5 41 59 32 59z" fill="#8f5f2e" />
+    <g stroke="#5a3814" stroke-width="2.1" stroke-linecap="round" fill="none" opacity=".7">
+      <path d="M25 14c-2.6 7.6-3.4 15.2-2.6 22.8M39 14c2.6 7.6 3.4 15.2 2.6 22.8" />
+      <path d="M19.5 27c-.8 7.4-.5 14 1.2 19.8M44.5 27c.8 7.4.5 14-1.2 19.8" />
+      <path d="M32 9v47" opacity=".55" />
+    </g>
   </symbol>
   <symbol id="f-avocado" viewBox="0 0 64 64">
     <path d="M32 7c9 0 15 8 15 18 0 13-7 32-15 32S17 38 17 25C17 15 23 7 32 7z" fill="#3f6b2b" />
@@ -382,6 +391,30 @@
           </dl>
         </div>
       </article>
+
+      <article class="produce-detail" id="pecans">
+        <div class="ph">
+          <svg><use href="#f-pecan" /></svg>
+          <img src="assets/img/pecans.jpg" alt="Export-grade pecan nuts, in-shell and kernels" loading="lazy" onload="this.style.opacity=1" onerror="this.remove()" />
+        </div>
+        <div>
+          <h3>Pecan Nuts</h3>
+          <p>
+            The one line we carry that is not a fresh fruit, and it behaves completely
+            differently. Pecans are harvested dry, so the clock that governs a punnet of
+            berries does not apply &mdash; properly dried and stored, they hold condition for
+            months rather than days. That makes them the easiest line to buy in volume and
+            hold against a programme. Supplied in-shell or as kernels, graded by size and
+            colour, with moisture checked before packing.
+          </p>
+          <dl class="kv">
+            <div><dt>Varieties</dt><dd>Wichita, Choctaw, Barton</dd></div>
+            <div><dt>Season</dt><dd>May to September</dd></div>
+            <div><dt>Pack formats</dt><dd>In-shell in 10kg cartons or 25kg bags; kernels in 5kg vacuum packs</dd></div>
+            <div><dt>Freight</dt><dd>Air freight</dd></div>
+          </dl>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -499,6 +532,21 @@
               <td class="on" data-fruit="Avocados" data-month="October" data-state="Available"><span></span></td>
               <td data-fruit="Avocados" data-month="November" data-state="Out of season"><span></span></td>
               <td data-fruit="Avocados" data-month="December" data-state="Out of season"><span></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Pecan Nuts</th>
+              <td data-fruit="Pecan Nuts" data-month="January" data-state="Out of season"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="February" data-state="Out of season"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="March" data-state="Out of season"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="April" data-state="Out of season"><span></span></td>
+              <td class="on" data-fruit="Pecan Nuts" data-month="May" data-state="Available"><span></span></td>
+              <td class="on" data-fruit="Pecan Nuts" data-month="June" data-state="Available"><span></span></td>
+              <td class="on" data-fruit="Pecan Nuts" data-month="July" data-state="Available"><span></span></td>
+              <td class="on" data-fruit="Pecan Nuts" data-month="August" data-state="Available"><span></span></td>
+              <td class="on" data-fruit="Pecan Nuts" data-month="September" data-state="Available"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="October" data-state="Out of season"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="November" data-state="Out of season"><span></span></td>
+              <td data-fruit="Pecan Nuts" data-month="December" data-state="Out of season"><span></span></td>
             </tr>
           </tbody>
         </table>
@@ -669,6 +717,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=202610290253" defer></script>
+<script src="js/site.js?v=202611042049" defer></script>
 </body>
 </html>

@@ -753,3 +753,9 @@ table.season td.is-hot.on span { box-shadow: 0 3px 12px rgba(140, 198, 63, .55);
     background: rgba(8, 26, 40, .5);
   }
 }
+
+/* an odd number of product cards leaves the last one alone on its row —
+   centre it rather than stranding it against the left edge */
+@media (min-width: 1041px) {
+  .products > .product-card:last-child:nth-child(3n + 1) { grid-column: 2; }
+}

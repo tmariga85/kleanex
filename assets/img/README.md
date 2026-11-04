@@ -20,6 +20,7 @@ shows a broken image.
 | `export.jpg` | Export Capabilities band — pallets loading onto a freighter at dawn | 1500 × 621 |
 | `quality.jpg` | Quality section — QC inspector checking blueberries against the spec | 1400 × 933 |
 | `blueberries.jpg` | Product card + About page | 652 × 726 |
+| `pecans.jpg` | Product card + About page | 900 × 600 |
 | `litchis.jpg` | Product card + About page | 654 × 726 |
 | `avocados.jpg` | Product card + About page | 652 × 726 |
 | `strawberries.jpg` | Product card + About page | 408 × 210 |
