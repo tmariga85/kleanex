@@ -132,3 +132,46 @@ is how the Contact page once rendered the About page's hero image.
 V=$(date +%Y%m%d%H%M)
 sed -i "s|styles.css?v=[0-9]*|styles.css?v=$V|; s|site.js?v=[0-9]*|site.js?v=$V|" index.html about.html contact.html
 ```
+
+## Analytics and Search Console
+
+Neither is installed yet. Both need an account step that only the site owner can do,
+because each issues a token tied to a personal login.
+
+### Google Search Console
+
+Reports the search terms people used to reach the site, impressions, clicks, average
+position, and which pages Google has indexed.
+
+Two ways to verify ownership:
+
+1. **URL-prefix property** (simpler). In Search Console choose "URL prefix", enter
+   `https://www.kleanex.co.za/`, pick the **HTML tag** method, and copy the token out of the
+   tag it shows. The tag goes in the `<head>` of all three pages:
+   `<meta name="google-site-verification" content="TOKEN" />`
+   Covers `https://www.kleanex.co.za/` only — which is every real visit, since the apex and
+   `http` both 301 to www.
+2. **Domain property** (more complete). Add the TXT record Search Console gives you to the
+   kleanex.co.za zone at Afrihost. Covers www, apex, http and https in one property, and
+   survives any future protocol change. Nothing goes in the repo.
+
+Afterwards, submit `https://www.kleanex.co.za/sitemap.xml` under Sitemaps. It is already
+live and valid.
+
+### Cloudflare Web Analytics
+
+Free, cookieless, roughly 10 KB. Reports visitors, page paths, referrers, countries,
+devices and browsers. Works without moving DNS to Cloudflare.
+
+Create a free Cloudflare account, add `www.kleanex.co.za` under Web Analytics, and copy the
+beacon token. The snippet goes just before `</body>` on all three pages.
+
+**Known gap:** Cloudflare's documented dimensions are country, host, path, referrer, device,
+browser, OS and navigation type — there is no click or event dimension. Because the enquiry
+form opens the visitor's mail client rather than posting to a server, clicks on **Send
+Enquiry**, the WhatsApp link and the email link will not be counted. If "did the site produce
+enquiries" becomes the question that matters, that needs a tool with custom events.
+
+### When adding either
+
+Bump the `?v=` stamp on the CSS and JS links, as with any other change.
